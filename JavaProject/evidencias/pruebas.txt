@@ -1,0 +1,59 @@
+2026-11-16T12:57:00.841Z
+darwin v25.9.0
+OK HTTP: recursos web reales
+OK Seguridad: token desconocido 401
+OK RF01: vendedor inicialmente inactivo 403
+OK RF01: BODEGA no autoriza
+OK RF01: vendedores iniciales
+OK RF01: booleano explícito
+OK RF01: autorizar vendedor
+OK RF02: catálogo y asociaciones iniciales
+OK RF02: existencias iniciales y fórmula
+OK RF02: consulta no modifica estado
+OK RF01: revocación con mismo token
+OK RF03: reposición por producto
+OK RF03: compra válida mediante api.mjs
+OK RF03: compra idempotente
+OK RF03: referencia contradictoria 409
+OK RF03: proveedor incompatible 409 y rollback
+OK RF03: cantidad inválida 0
+OK RF03: cantidad inválida -1
+OK RF03: cantidad inválida 1.5
+OK RF03: cantidad inválida 1000001
+OK RF03: referencia inválida
+OK RF03: proveedor inexistente
+OK RF03: producto inexistente
+OK RF03: capacidad máxima y rollback
+OK RF04: venta válida y vendedor derivado del token
+OK RF04: reserva sin salida física
+OK RF04: cliente inexistente
+OK RF04: insuficiente, sin cambios parciales
+OK RF04: duplicado, sin cambios parciales
+OK RF04: negativa, sin cambios parciales
+OK RF04: decimal, sin cambios parciales
+OK RF04: vacía, sin cambios parciales
+OK RF04: más de 100, sin cambios parciales
+OK RF04: producto inexistente, sin cambios parciales
+OK RF04: segunda línea sin stock, sin cambios parciales
+OK Seguridad: no se puede suplantar vendedor
+OK RF05: destinatario, dirección y líneas pendientes
+OK RF05: solo ENTREGAS despacha
+OK RF05: venta inexistente
+OK RF05: despacho mediante api.mjs
+OK RF05: salida de físicas y reservas
+OK RF05: reintento conserva ID e inventario
+OK RF05: venta despachada no está pendiente
+OK Persistencia: inventario, compra y entrega tras reiniciar
+OK Concurrencia: solo una de dos ventas de 8 tiene stock
+OK Concurrencia: dos despachos, una sola salida
+OK Cliente Java: vendedores y autorización RF01
+OK Cliente Java: catálogo y existencias RF02
+OK Cliente Java: proveedores y compras RF03
+OK Cliente Java: venta RF04
+OK Cliente Java: pendientes y despacho RF05
+OK Cliente Java: error HTTP y código de salida 2
+OK HTTP: tipos, campos duplicados y codificación inválida
+OK Seguridad: matriz de roles en endpoints
+OK Persistencia: segundo proceso no abre el mismo estado
+OK Invariante final
+56/56 aprobadas

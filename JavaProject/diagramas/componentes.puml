@@ -1,0 +1,79 @@
+@startuml componentes_acceso
+!pragma layout smetana
+skinparam dpi 220
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam defaultFontName SansSerif
+skinparam nodesep 65
+skinparam ranksep 70
+skinparam componentBackgroundColor #F0F6F1
+skinparam componentBorderColor #295442
+title PoliMarket · Interfaces proporcionadas y clientes (UML 2.5)
+component "ClienteWeb\nJavaScript / navegador" as Web
+component "ClienteConsola\nJava 21 / terminal" as CLI
+interface "API HTTP\nformulario / JSON" as HTTP
+component AdaptadorHTTP as Adapter
+Web ..> HTTP : Fetch
+CLI ..> HTTP : HttpClient
+HTTP -down- Adapter
+interface IRRHH
+interface IVentas
+interface IProveedores
+interface IBodega
+interface IEntregas
+Adapter ..> IRRHH
+Adapter ..> IVentas
+Adapter ..> IProveedores
+Adapter ..> IBodega
+Adapter ..> IEntregas
+component RecursosHumanos as RH
+component Ventas as V
+component Proveedores as P
+component Bodega as B
+component Entregas as E
+IRRHH -down- RH
+IVentas -down- V
+IProveedores -down- P
+IBodega -down- B
+IEntregas -down- E
+note bottom of B
+ Círculo con línea: interfaz proporcionada.
+ Flecha discontinua: dependencia de uso.
+ Contratos Java definidos en Contracts.java.
+end note
+@enduml
+
+@startuml componentes_negocio
+!pragma layout smetana
+skinparam dpi 220
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam defaultFontName SansSerif
+skinparam nodesep 90
+skinparam ranksep 80
+skinparam componentBackgroundColor #F0F6F1
+skinparam componentBorderColor #295442
+title PoliMarket · Colaboración entre componentes (UML 2.5)
+component Entregas as E
+component Ventas as V
+component Proveedores as P
+component Bodega as B
+component RecursosHumanos as RH
+E ..> V : <<use>> IVentas\npendientes / obtener
+E ..> B : <<use>> IBodega\nsacar
+V ..> B : <<use>> IBodega\nexistencias / reservar
+P ..> B : <<use>> IBodega\ningresar
+B ..> RH : <<use>> IRRHH\nverificar
+V ..> RH : <<use>> IRRHH
+P ..> RH : <<use>> IRRHH
+E ..> RH : <<use>> IRRHH
+note bottom of RH
+ Las interfaces se definen en la vista superior.
+ Los cinco componentes dependen de Store:
+ transacciones y persistencia compartidas.
+ Store no se cuenta como área de negocio.
+ Inyección por constructor en Server.java.
+end note
+@enduml

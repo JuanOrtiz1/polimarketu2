@@ -1,0 +1,8 @@
+Componente,Capa,Área,RF,Interfaz,Funcionalidades,Dependencias
+RecursosHumanos,Negocio,RRHH,RF-01 y transversal,IRRHH,vendedores autorizar verificar,Store
+Bodega,Negocio,Bodega,RF-02 a RF-05,IBodega,existencias reservar ingresar sacar,IRRHH y Store
+Proveedores,Negocio,Proveedores,RF-03,IProveedores,reposicion comprar,IRRHH IBodega y Store
+Ventas,Negocio,Ventas,RF-02 RF-04 RF-05,IVentas,catalogo vender pendientes obtener,IRRHH IBodega y Store
+Entregas,Negocio,Entregas,RF-05,IEntregas,pendientes despachar,IRRHH IVentas IBodega y Store
+ClienteWeb,Cliente,Todas,RF-01 a RF-05,API HTTP,Formularios y consultas para las cinco funcionalidades,Fetch
+ClienteConsola,Cliente,Todas,RF-01 a RF-05,API HTTP,Argumentos y consultas para las cinco funcionalidades,HttpClient

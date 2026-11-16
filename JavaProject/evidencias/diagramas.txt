@@ -1,0 +1,2 @@
+clases.bmp: firma BM, RGB 24 bits, 2256 x 3174, 21481686 bytes; reabierto correctamente
+componentes.bmp: firma BM, RGB 24 bits, 1484 x 2598, 11566350 bytes; reabierto correctamente

@@ -1,0 +1,5 @@
+OK Error de persistencia explícito
+OK Rollback en memoria tras fallo de escritura
+OK Archivo anterior intacto tras fallo de escritura
+OK Filtro rechaza tipos no permitidos
+4/4 aprobadas

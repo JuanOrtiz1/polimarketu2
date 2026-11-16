@@ -1,0 +1,234 @@
+{
+  "fecha": "2026-11-16T12:57:00.841Z",
+  "plataforma": "darwin",
+  "node": "v25.9.0",
+  "estadoTemporal": "/var/folders/k9/s_07w00x0kv1t1nbsm4sw4740000gn/T/polimarket-test-pkUt40/estado.ser",
+  "total": 56,
+  "aprobadas": 56,
+  "resultados": [
+    {
+      "name": "HTTP: recursos web reales",
+      "passed": true
+    },
+    {
+      "name": "Seguridad: token desconocido 401",
+      "passed": true
+    },
+    {
+      "name": "RF01: vendedor inicialmente inactivo 403",
+      "passed": true
+    },
+    {
+      "name": "RF01: BODEGA no autoriza",
+      "passed": true
+    },
+    {
+      "name": "RF01: vendedores iniciales",
+      "passed": true
+    },
+    {
+      "name": "RF01: booleano explícito",
+      "passed": true
+    },
+    {
+      "name": "RF01: autorizar vendedor",
+      "passed": true
+    },
+    {
+      "name": "RF02: catálogo y asociaciones iniciales",
+      "passed": true
+    },
+    {
+      "name": "RF02: existencias iniciales y fórmula",
+      "passed": true
+    },
+    {
+      "name": "RF02: consulta no modifica estado",
+      "passed": true
+    },
+    {
+      "name": "RF01: revocación con mismo token",
+      "passed": true
+    },
+    {
+      "name": "RF03: reposición por producto",
+      "passed": true
+    },
+    {
+      "name": "RF03: compra válida mediante api.mjs",
+      "passed": true
+    },
+    {
+      "name": "RF03: compra idempotente",
+      "passed": true
+    },
+    {
+      "name": "RF03: referencia contradictoria 409",
+      "passed": true
+    },
+    {
+      "name": "RF03: proveedor incompatible 409 y rollback",
+      "passed": true
+    },
+    {
+      "name": "RF03: cantidad inválida 0",
+      "passed": true
+    },
+    {
+      "name": "RF03: cantidad inválida -1",
+      "passed": true
+    },
+    {
+      "name": "RF03: cantidad inválida 1.5",
+      "passed": true
+    },
+    {
+      "name": "RF03: cantidad inválida 1000001",
+      "passed": true
+    },
+    {
+      "name": "RF03: referencia inválida",
+      "passed": true
+    },
+    {
+      "name": "RF03: proveedor inexistente",
+      "passed": true
+    },
+    {
+      "name": "RF03: producto inexistente",
+      "passed": true
+    },
+    {
+      "name": "RF03: capacidad máxima y rollback",
+      "passed": true
+    },
+    {
+      "name": "RF04: venta válida y vendedor derivado del token",
+      "passed": true
+    },
+    {
+      "name": "RF04: reserva sin salida física",
+      "passed": true
+    },
+    {
+      "name": "RF04: cliente inexistente",
+      "passed": true
+    },
+    {
+      "name": "RF04: insuficiente, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: duplicado, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: negativa, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: decimal, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: vacía, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: más de 100, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: producto inexistente, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "RF04: segunda línea sin stock, sin cambios parciales",
+      "passed": true
+    },
+    {
+      "name": "Seguridad: no se puede suplantar vendedor",
+      "passed": true
+    },
+    {
+      "name": "RF05: destinatario, dirección y líneas pendientes",
+      "passed": true
+    },
+    {
+      "name": "RF05: solo ENTREGAS despacha",
+      "passed": true
+    },
+    {
+      "name": "RF05: venta inexistente",
+      "passed": true
+    },
+    {
+      "name": "RF05: despacho mediante api.mjs",
+      "passed": true
+    },
+    {
+      "name": "RF05: salida de físicas y reservas",
+      "passed": true
+    },
+    {
+      "name": "RF05: reintento conserva ID e inventario",
+      "passed": true
+    },
+    {
+      "name": "RF05: venta despachada no está pendiente",
+      "passed": true
+    },
+    {
+      "name": "Persistencia: inventario, compra y entrega tras reiniciar",
+      "passed": true
+    },
+    {
+      "name": "Concurrencia: solo una de dos ventas de 8 tiene stock",
+      "passed": true
+    },
+    {
+      "name": "Concurrencia: dos despachos, una sola salida",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: vendedores y autorización RF01",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: catálogo y existencias RF02",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: proveedores y compras RF03",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: venta RF04",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: pendientes y despacho RF05",
+      "passed": true
+    },
+    {
+      "name": "Cliente Java: error HTTP y código de salida 2",
+      "passed": true
+    },
+    {
+      "name": "HTTP: tipos, campos duplicados y codificación inválida",
+      "passed": true
+    },
+    {
+      "name": "Seguridad: matriz de roles en endpoints",
+      "passed": true
+    },
+    {
+      "name": "Persistencia: segundo proceso no abre el mismo estado",
+      "passed": true
+    },
+    {
+      "name": "Invariante final",
+      "passed": true
+    }
+  ]
+}

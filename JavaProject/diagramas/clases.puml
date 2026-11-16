@@ -1,0 +1,102 @@
+@startuml
+!pragma layout smetana
+skinparam dpi 220
+skinparam backgroundColor white
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam classBackgroundColor #F0F6F1
+skinparam classBorderColor #295442
+skinparam ArrowColor #486355
+hide empty methods
+title PoliMarket · Modelo de clases del dominio (UML 2.5)
+class Usuario <<record>> {
+ +id: String
+ +nombre: String
+ +rol: Rol
+ +autorizado: boolean
+}
+enum Rol {
+ RRHH
+ VENDEDOR
+ BODEGA
+ ENTREGAS
+}
+class Cliente <<record>> {
+ +id: String
+ +nombre: String
+ +direccion: String
+}
+class Venta <<record>> {
+ +id: String
+ +vendedorId: String
+ +clienteId: String
+ +lineas: List<LineaVenta>
+}
+class LineaVenta <<record>> {
+ +productoId: String
+ +cantidad: int
+}
+class Producto <<record>> {
+ +id: String
+ +nombre: String
+ +proveedores: List<String>
+}
+class Existencia <<record>> {
+ +productoId: String
+ +fisicas: int
+ +reservadas: int
+ +disponibles(): int
+}
+class Proveedor <<record>> {
+ +id: String
+ +nombre: String
+}
+class Compra <<record>> {
+ +id: String
+ +proveedorId: String
+ +productoId: String
+ +cantidad: int
+ +referencia: String
+}
+class Entrega <<record>> {
+ +id: String
+ +ventaId: String
+ +destinatario: String
+ +direccion: String
+ +fecha: String
+}
+class Movimiento <<record>> {
+ +id: String
+ +productoId: String
+ +cantidad: int
+ +origenTipo: String
+ +origenId: String
+}
+Usuario ..> Rol : tipo
+Usuario "1" -- "0..*" Venta : registra {rol = VENDEDOR}
+Cliente "1" -- "0..*" Venta : destinatario
+Venta "1" *-- "1..100" LineaVenta : contiene
+LineaVenta "0..*" -- "1" Producto : identifica
+Producto "1" -- "1" Existencia : tiene
+Producto "0..*" -- "1..*" Proveedor : abastecen
+Proveedor "1" -- "0..*" Compra : suministra
+Producto "1" -- "0..*" Compra : adquirido
+Venta "1" -- "0..1" Entrega : se despacha en
+Producto "1" -- "0..*" Movimiento : registra variación
+Compra "0..1" -- "1" Movimiento : entrada
+Entrega "0..1" -- "1..100" Movimiento : salidas
+note bottom of Existencia
+ {1000000 >= fisicas >= reservadas >= 0}
+ disponibles = fisicas - reservadas
+end note
+note bottom of Movimiento
+ {xor} Origen: Compra o Entrega, nunca ambos.
+ Compra: cantidad positiva. Entrega: negativa.
+ El saldo inicial no es un movimiento.
+end note
+note right of Venta
+ Líneas inmutables; productos sin duplicados.
+ Las asociaciones se almacenan por ID.
+end note
+@enduml
